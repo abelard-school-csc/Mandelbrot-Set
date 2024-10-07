@@ -1,62 +1,76 @@
 # Mandelbrot Set Visualization
 
-## What is the Mandelbrot Set?
+This project generates a visualization of the Mandelbrot set using Python, NumPy, and Matplotlib. The Mandelbrot set is a famous fractal defined by a simple iterative equation, and its visual representation reveals intricate patterns.
 
-The Mandelbrot set is a famous fractal named after mathematician Benoit Mandelbrot. It is defined as the set of complex numbers `c` for which the function `f(z) = z^2 + c` does not diverge when iterated starting from `z = 0`. 
+## Table of Contents
 
-In simpler terms, for each complex number `c`, we repeatedly apply the function and check if the value of `z` escapes to infinity or remains bounded. Points that remain bounded after a large number of iterations belong to the Mandelbrot set, while points that escape are considered outside of it.
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Output](#output)
+- [License](#license)
 
-The Mandelbrot set exhibits beautiful fractal patterns, meaning that as you zoom in on its boundary, you will discover intricate and self-similar structures appearing infinitely.
+## Introduction
 
-## About the Code
+The Mandelbrot set is defined in the complex plane and consists of points that do not escape to infinity under iteration of the function:
 
-This Python script generates a visualization of the Mandelbrot set using the `numpy` and `matplotlib` libraries. Here are the key features of the code:
+\[ Z_{n+1} = Z_n^2 + C \]
 
-1. **Grid Generation**: It creates a 2D grid of complex numbers (`C`) that represent points in the complex plane. Each pixel in the image corresponds to a complex number.
+where \( C \) is a complex number. This project calculates the set and visualizes it using a color map to represent the number of iterations required for points to escape.
 
-2. **Iteration**: For each point `C`, the script iterates the function `Z = Z^2 + C` a maximum number of times (set to `256` iterations by default). The value of `Z` is checked to see if it escapes, defined as having a magnitude greater than `2`.
+## Requirements
 
-3. **Escape Times**: The number of iterations before escape (or if the point never escapes) is stored in the `mandelbrot_set` array. This array represents the final image, where points in the Mandelbrot set are colored based on how long it takes them to escape.
+To run this project, you will need:
 
-4. **Plotting**: The result is visualized using `matplotlib`, where a colormap (`inferno`) is applied to show the escape times in different colors.
+- Python 3.x
+- NumPy
+- Matplotlib
 
-### Cross-Platform Compatibility
+You can install the required libraries using pip:
 
-The code is designed to work on all operating systems (Linux, Windows, macOS). It saves the output by default as an image file, but it can also display the plot interactively if the appropriate environment is available.
+```bash
+pip install numpy matplotlib
+```
 
-### How to Run the Code
+## Installation
 
-1. **Install Required Libraries**:
-   Ensure you have the required libraries installed. You can do this by running:
+1. Clone the repository:
+
    ```bash
-   pip install numpy matplotlib
+   git clone <link-to-your-repo>
    ```
 
-2. **Run the Script**:
-   - To save the plot as an image:
-     ```bash
-     python3 mandelbrot.py
-     ```
-   - To display the plot interactively (if supported by your environment):
-     ```bash
-     python3 mandelbrot.py --show
-     ```
+2. Navigate to the project directory:
 
-3. **Output**:
-   - The output will be saved as `mandelbrot_set.png` in the same directory if you run it without the `--show` flag.
-   - If you use the `--show` flag and your environment supports it, a window will pop up displaying the Mandelbrot set.
+   ```bash
+   cd mandelbrot-set
+   ```
 
-### Customization
+## Usage
 
-You can customize the following parameters in the code:
-- **Resolution**: Change the `width` and `height` variables to modify the resolution of the output image.
-- **Zoom**: Adjust the `x_min`, `x_max`, `y_min`, and `y_max` variables to zoom in or out on different regions of the complex plane.
-- **Iterations**: Modify the `max_iter` variable to control the maximum number of iterations for escape checking.
+Run the script to generate the Mandelbrot set image:
 
-## Example Output
+```bash
+python mandelbrot.py
+```
 
-The output of the script will look something like this:
+This will create a file named `mandelbrot_set.png` in the same directory.
 
-![Mandelbrot Set Visualization](output_example.png)
+### Parameters
 
-Enjoy exploring the infinite beauty of the Mandelbrot set!
+You can adjust the following parameters in the script:
+
+- `width` and `height`: Dimensions of the output image.
+- `x_min`, `x_max`, `y_min`, `y_max`: The bounds of the complex plane to visualize.
+- `max_iter`: The maximum number of iterations to determine whether a point escapes.
+
+## Output
+
+The script will produce an image file named `mandelbrot_set.png`. The image shows the Mandelbrot set with a color map indicating the number of iterations for each point to escape.
+
+![Mandelbrot Set Example](output_example.png)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
