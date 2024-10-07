@@ -15,7 +15,7 @@ This project generates a visualization of the Mandelbrot set using Python, NumPy
 
 The Mandelbrot set is defined in the complex plane and consists of points that do not escape to infinity under iteration of the function:
 
-\[ Z_{n+1} = Z_n^2 + C \]
+$$\[ Z_{n+1} = Z_n^2 + C \]$$
 
 where \( C \) is a complex number. This project calculates the set and visualizes it using a color map to represent the number of iterations required for points to escape.
 
