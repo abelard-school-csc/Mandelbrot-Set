@@ -38,13 +38,13 @@ pip install numpy matplotlib
 1. Clone the repository:
 
    ```bash
-   git clone <link-to-your-repo>
+   git clone https://github.com/abelard-school-csc/Mandelbrot-Set.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd mandelbrot-set
+   cd Mandelbrot-Set
    ```
 
 ## Usage
